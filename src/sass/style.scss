@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MuseoCyrl', sans-serif;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+@import './base/variables';
+@import './base/fonts';
+@import './blocks/header';
+@import './blocks/main';
+@import './blocks/products';
+@import './blocks/products';
+@import './blocks/modal';
+@import './blocks/header-mobile';
+@import './base/media';
+
+.fgfg {
+    height: 1000px;
+    // background-color: #fff;
+}
+// body {
+//     overflow-y: hidden;
+// }
