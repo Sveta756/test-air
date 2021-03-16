@@ -1,6 +1,9 @@
 .header-mobile {
     display: none;
     height: 50px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
     padding-left: 10px;
     padding-right: 10px;
     background-color: #fff;
@@ -9,6 +12,15 @@
         justify-content: space-between;
         
     }
+    &__hamburger {
+        width: 22px;
+        height: 13px;
+        margin: 17px 10px 20px 5px; 
+        background: url('../icon/hamb.svg') no-repeat center;
+        &_active {
+            background: url('../icon/close.svg') no-repeat center;
+        }
+    }
     &__link-logo {
         padding-top: 7px;
     }
@@ -16,9 +28,119 @@
         width: 111px;
         height: 40px;
     }
+    &__hamb {
+        width: 22px;
+        height: 13px;
+        margin: 17px 10px 20px 5px; 
+    }
+    &__links {
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 13px;
+    }
     &__basket {
+        padding-top: 0;
         width: 30px;
         height: 26px;
-        padding-top: 10px;
     }
+    &__body {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 50px;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        background-color: #fff;
+        z-index: 1;
+        overflow-y: scroll;
+    }
+    &__btns {
+        // margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+    &__menu-icon {
+        width: 25px;
+        height: 22px;
+    }
+    &__icons {
+        width: 99px;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-right: 1px solid #EAEAEA;
+        &:last-child {
+            border-right: none;
+        }
+    }
+    &__line {
+        height: 2px;
+        background-color: $second-color;
+        list-style: none;
+    }
+    &__head {
+        font-weight: 700;
+        color: $main-color;
+        font-size: 16px;
+        line-height: 19px;
+        background: url('../icon/right.svg') no-repeat center right 25px;
+        &_active {
+            background: url('../icon/arrow-down.svg') no-repeat center right 25px;  
+            color: $second-color;
+        }
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 67px;
+        margin-right: 33px;
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 1px solid #EAEAEA;
+        &_nb {
+            border-bottom: none;
+        }
+        &_nbg {
+            background: none;
+        }
+    }
+    &__link-levelone,  &__link-leveltwo {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-right: 33px;
+        background: url('../icon/right.svg') no-repeat center right 25px;
+        text-decoration: none;
+        padding-left: 35px;
+        min-height: 47px;
+        font-size: 15px;
+        line-height: 19px;
+        color: $main-color;
+        border-bottom: 1px solid #EAEAEA;
+    }
+    &__link-leveltwo {
+        padding-left: 55px;
+        background: none;
+    }
+    &__icon {
+        width: 25px;
+        height: 27px;
+        margin-right: 9px;
+    }
+    &__levelone, &__leveltwo {
+        display: none;
+    }
+    &__menu-leveltwo {
+        display: none;
+    }
+    
 }
+.active-link {
+    color: $second-color;
+    background: url('../icon/arrow-down.svg') no-repeat center right 25px;  
+}
+

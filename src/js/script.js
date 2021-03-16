@@ -22,40 +22,61 @@ $(document).ready(function(){
     });
 
 
-    // $('.header').on('mouseleave', '.header__link', function(e) {
-    //   console.log(e.target.className);
-    //   if(e.target.className == "header__text") {
-    //     console.log('hi');
-    //     $(`div[data-id="${$(this).attr('data-id')}"`).fadeOut();
-    //   }
-    //   //$(`div[data-id="${$(this).attr('data-id')}"`).fadeOut();
-    //   //$('.header__accordion').fadeOut();
-    // });
+  //мобильная версия шапки
+  $('.header-mobile__hamburger').click(function() {
+    $(this).toggleClass('header-mobile__hamburger_active');
+    if ($(this).hasClass('header-mobile__hamburger_active')) {
+      $('.header-mobile__body').fadeIn();
+    } else {
+      $('.header-mobile__body').fadeOut();
+      $('.header-mobile__head_active').removeClass('header-mobile__head_active').next().slideUp();
+      $('.header-mobile__link_active').removeClass('header-mobile__link_active').next().slideUp();
+      $('.overflow').removeClass('overflow').next().slideUp();
 
-    // $('.header').on('mouseleave', '.header__item', function() {
-    //   $(`div[data-id="${$(this).attr('data-id')}"`).fadeOut();
-    //   // $('.header__accordion').fadeOut();
-    // });
+    }
+  });
 
-    //при скролле исчезает видео и сетка 
+  //аккордион первый уровень
+  $('.header-mobile__head').click(function() {
+      
+      $(this).toggleClass('header-mobile__head_active');
+      if( $(this).toggleClass('header-mobile__head_active')) {
+        // $('body').css('overflow', 'hidden');
+        $(this).toggleClass('header-mobile__head_active').next().slideToggle();
+        $('.header-mobile__head_active').not(this).removeClass('header-mobile__head_active').next().slideUp();
+        $('.header-mobile__link-levelone').removeClass('overflow').next().slideUp();
+      } 
+        
+  })
+
+  //аккордион второй уровень
+  $('.header-mobile__link-levelone').click(function() {
+    $(this).toggleClass('active-link').next().slideToggle();
+    $('.active-link').not(this).removeClass('active-link').next().slideUp();  
+  });
+
+
+
+    
+    // при скролле исчезает видео и сетка 
     $(window).on('scroll', function() {
-      var scrollCoef = 0.0035;
-
-      $('.header').css('background', 'rgb(255, 255, 255)');
+      var scrollCoef = 0.003;
     
       $('video, .opacity').css({
         opacity: 1 - $(window).scrollTop() * scrollCoef
       });
 
-      $('.products').css({
-        height: 300 + $(window).scrollTop() * 2
+      $('.products, .next-block').css({
+        height:  $(window).scrollTop() * 2
       });
+      $('.header').css('background', 'rgb(255, 255, 255)')
     });
 
     //растягивание блока 
     $('.wrapper').css({
       height: $(window).height() + 'px'
     });
+
 
 
     //модалка
@@ -83,6 +104,13 @@ $(document).ready(function(){
       if (e.keyCode == 27)
       $('.overlay, #modal, #thanks').fadeOut();
     });
+
+    $('input[name=phone]').mask("+7(999)999-9999"); //маска номера
+
+    // добавляем правило для валидации телефона
+   jQuery.validator.addMethod("checkMaskPhone", function(value, element) {
+     return /\+\d{1}\(\d{3}\)\d{3}-\d{4}/g.test(value); 
+    });
   
     //валидация формы в модальном окне
   
@@ -90,7 +118,9 @@ $(document).ready(function(){
         rules: {
             name: "required",
             checkbox: "required",
-            phone: "required",
+            phone: {
+              checkMaskPhone: true,
+            },
             email: {
                 required: true,
                 email: true 
@@ -131,7 +161,7 @@ $(document).ready(function(){
       var phone = $('#phone').val();
       var name = $('#name').val();
         
-      if(email.length != 0 && phone.length != 0 && name.length != 0 && $('#check').is(':checked')) {
+      if(email.length != 0 && phone.length !=0 && name.length != 0 && $('#check').is(':checked')) {
           $('.modal__submit').removeAttr('disabled');
           $('.modal__submit').css('opacity', '1');
       } else {
@@ -148,8 +178,6 @@ $(document).ready(function(){
       checkParams();
     });
       
-    $('input[name=phone]').mask("+7 (999) 999-99-99"); //маска номера
-
 
     $('form').submit(function(e) {
       $(this).find("input").val("");  

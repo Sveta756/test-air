@@ -9,12 +9,9 @@
 </head>
 <body>
     <video autoplay loop muted class="video" id="bgvideo">
-        <source src="video/video.mp4" type="video/mp4"></source>
+        <source src="video/video.mp4" type="video/mp4">
     </video>
     <div class="opacity"></div>
-        <!-- <video autoplay loop muted class="video" id="bgvideo">
-            <source src="video/video.mp4" type="video/mp4"></source>
-        </video> -->
     <div class="wrapper">
         <header class="header">
             <div class="header__wrapper">
@@ -175,34 +172,210 @@
                     </ul>
                 </nav>
                 <div class="header__menu-icons">
-                    <svg class="header__menu-icon">
-                        <use xlink:href="icon/icons.svg#basket"></use>
-                    </svg>
-                    <svg class="header__menu-icon">
-                        <use xlink:href="icon/icons.svg#like"></use>
-                    </svg>
-                    <svg class="header__menu-icon">
-                        <use xlink:href="icon/icons.svg#user"></use>
-                    </svg>
+                    <a href="#" class="header__link-menu-icon">
+                        <svg class="header__menu-icon">
+                            <use xlink:href="icon/icons.svg#basket"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="header__link-menu-icon">
+                        <svg class="header__menu-icon">
+                            <use xlink:href="icon/icons.svg#like"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="header__link-menu-icon">
+                       <svg class="header__menu-icon">
+                            <use xlink:href="icon/icons.svg#user"></use>
+                        </svg> 
+                    </a>
                 </div>
             </div>
         </header>
     
         <header class="header-mobile">
             <div class="header-mobile__wr">
-                <svg class="icon">
-                    <use xlink:href="icon/icons.svg#hamburger"></use>
-                </svg>
+                <div class="header-mobile__hamburger">
+                </div>
                 <a href="#" class="header-mobile__link-logo">
                     <svg class="header-mobile__logo">
                         <use xlink:href="icon/icons.svg#logo"></use>
                     </svg>
                 </a>
-                <a href="#" class="header-mobile__basket"> 
+                <a href="#" class="header-mobile__links"> 
                     <svg class="header-mobile__basket">
                         <use xlink:href="icon/icons.svg#basket"></use>
                     </svg>
                 </a>
+                <div class="header-mobile__body">
+                    <div class="header-mobile__btns">
+                        <a href="#" class="header-mobile__icons">
+                            <svg class="header-mobile__menu-icon">
+                                <use xlink:href="icon/icons.svg#like-two"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="header-mobile__icons">
+                            <svg class="header-mobile__menu-icon">
+                                <use xlink:href="icon/icons.svg#basket_two"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="header-mobile__icons">
+                            <svg class="header-mobile__menu-icon">
+                                <use xlink:href="icon/icons.svg#user_two"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="header-mobile__line"></div>
+                    <nav class="header-mobile__nav">
+                        <ul class="header-mobile__menu">
+                            <li class="header-mobile__item">
+                                <div class="header-mobile__head">
+                                    <a href="#" class="header-mobile__link">
+                                        <svg class="header-mobile__icon">
+                                            <use xlink:href="icon/icons.svg#varnish"></use>
+                                        </svg>
+                                        <span class="header-mobile__text">Косметика</span>
+                                    </a>
+                                </div>
+                                <div class="header-mobile__levelone">
+                                    <ul>
+                                        <li><a href="#" class="header-mobile__link-levelone">Косметика 1</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="header-mobile__link-levelone">Косметика 2</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="header-mobile__link-levelone">Косметика 3</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="header-mobile__link-levelone">Косметика 4</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header-mobile__item">
+                                <div class="header-mobile__head">
+                                    <a href="#" class="header-mobile__link">
+                                        <svg class="header-mobile__icon">
+                                            <use xlink:href="icon/icons.svg#hairdryer"></use>
+                                        </svg>
+                                        <span class="header-mobile__text">Оборудование</span>
+                                    </a>
+                                </div>
+                                <div class="header-mobile__levelone">
+                                    <ul>
+                                        <li><a href="#" class="header-mobile__link-levelone">Оборудование 1</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="header-mobile__link-levelone">Оборудование 2</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="header-mobile__link-levelone">Оборудование 3</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="header-mobile__link-levelone">Оборудование 4</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header-mobile__item">
+                                <div class="header-mobile__head">
+                                    <a href="#" class="header-mobile__link header-mobile__link_nb">
+                                        <svg class="header-mobile__icon">
+                                            <use xlink:href="icon/icons.svg#ring"></use>
+                                        </svg>
+                                        <span class="header-mobile__text">Украшения</span>
+                                    </a>
+                                </div>
+                                <div class="header-mobile__levelone">
+                                    <ul>
+                                        <li><a href="#" class="header-mobile__link-levelone">Украшения 1</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="header-mobile__link-levelone">Украшения 2</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="header-mobile__link-levelone">Украшения 3</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="header-mobile__link-levelone">Украшения 4</a>
+                                            <ul class="header-mobile__menu-leveltwo">
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 1</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 2</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 3</a></li>
+                                                <li><a href="#" class="header-mobile__link-leveltwo">Cсылка 4</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header-mobile__line"></li>
+                            <li class="header-mobile__item">
+                                <a href="#" class="header-mobile__link header-mobile__link_nb header-mobile__link_nbg">
+                                    <svg class="header-mobile__icon">
+                                        <use xlink:href="icon/icons.svg#girl"></use>
+                                    </svg>
+                                    <span class="header-mobile__text">Бьюти-бложик</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header>
     
@@ -255,6 +428,7 @@
             </div>
         </div>
     </div>
+    <div class="next-block"></div>
     
     <div class="overlay">
         <div class="modal" id="modal">

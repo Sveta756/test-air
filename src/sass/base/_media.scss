@@ -1,4 +1,4 @@
-@media (min-width: 320px) and (max-width: 540px) {
+@media (max-width: 540px) {
     .header {
         display: none;
     }
@@ -12,11 +12,6 @@
         background:rgba(0, 0, 0, 0.12) url('../img/mobile-bg.jpg') center center/cover no-repeat;
 
     }
-    // .wrapper {
-    //     // height: 100%;
-    //     background:rgba(0, 0, 0, 0.12) url('../img/mobile-bg.jpg') center center/cover no-repeat;
-
-    // }
     .main {
         height: 60%;
         &__block {
@@ -48,14 +43,13 @@
             margin-bottom: 20px;
         }
     }
+
     .overlay {
         z-index: 5;
     }
     .modal {
         width: 100%;
         height: 100%;
-        // top: 0;
-        // left: 0;
         border-radius: 0;
         padding-left: 10px;
         padding-bottom: 10px;
