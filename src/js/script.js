@@ -1,67 +1,57 @@
 $(document).ready(function(){
-    //ищем ul, кликаем на li, добавляем класс активности, а у остальных табов убираем. ищем родителя __view находим у него контент, удаляем класс активности и выбираем элемент с индексом как у This и добавляем класс
-  
-    // $('ul.project__tabs').on('click', 'li:not(.project__tab_active)', function() {
-    //   $(this)
-    //     .addClass('project__tab_active').siblings().removeClass('project__tab_active')
-    //     .closest('div.project__view').find('div.project__content').removeClass('project__content_active').eq($(this).index()).addClass('project__content_active');
-    // });
-    //modal 
 
+    //шапка при наведении
     $('.header').on('mouseenter', '.header__item', function() {
       $(this).find('.header__link').addClass('header__link_active');
       $(this).addClass('header__item_act');
       $(`div[data-id="${$(this).attr('data-id')}"`).fadeIn();
     });
 
-
+    //шапка при отведении
     $('.header').on('mouseleave', '.header__item', function() {
       $(this).find('.header__link').removeClass('header__link_active');
       $(this).removeClass('header__item_act');
       $(`div[data-id="${$(this).attr('data-id')}"`).fadeOut();
     });
 
+    //мобильная версия шапки
+    $('.header-mobile__hamburger').click(function() {
+      $(this).toggleClass('header-mobile__hamburger_active');
+      if ($(this).hasClass('header-mobile__hamburger_active')) {
+        $('body').css('overflow', 'hidden');
+        $('.header-mobile__body').fadeIn();
+      } else {
+        $('.header-mobile__body').fadeOut();
+        $('.header-mobile__head_active').removeClass('header-mobile__head_active').next().slideUp();
+        $('.header-mobile__link_active').removeClass('header-mobile__link_active').next().slideUp();
+        $('.active-link').removeClass('active-link').next().slideUp();
+        $('body').css('overflow', '');
 
-  //мобильная версия шапки
-  $('.header-mobile__hamburger').click(function() {
-    $(this).toggleClass('header-mobile__hamburger_active');
-    if ($(this).hasClass('header-mobile__hamburger_active')) {
-      $('.header-mobile__body').fadeIn();
-    } else {
-      $('.header-mobile__body').fadeOut();
-      $('.header-mobile__head_active').removeClass('header-mobile__head_active').next().slideUp();
-      $('.header-mobile__link_active').removeClass('header-mobile__link_active').next().slideUp();
-      $('.overflow').removeClass('overflow').next().slideUp();
+      }
+    });
 
-    }
-  });
+    //аккордион первый уровень
+    $('.header-mobile__head').click(function() {
+        $(this).toggleClass('header-mobile__head_active');
+        if( $(this).toggleClass('header-mobile__head_active')) {
+          // $('body').css('overflow', 'hidden');
+          $(this).toggleClass('header-mobile__head_active').next().slideToggle();
+          $('.header-mobile__head_active').not(this).removeClass('header-mobile__head_active').next().slideUp();
+          $('.header-mobile__link-levelone').removeClass('active-link').next().slideUp();
+        } 
+          
+    });
 
-  //аккордион первый уровень
-  $('.header-mobile__head').click(function() {
-      
-      $(this).toggleClass('header-mobile__head_active');
-      if( $(this).toggleClass('header-mobile__head_active')) {
-        // $('body').css('overflow', 'hidden');
-        $(this).toggleClass('header-mobile__head_active').next().slideToggle();
-        $('.header-mobile__head_active').not(this).removeClass('header-mobile__head_active').next().slideUp();
-        $('.header-mobile__link-levelone').removeClass('overflow').next().slideUp();
-      } 
-        
-  })
-
-  //аккордион второй уровень
-  $('.header-mobile__link-levelone').click(function() {
-    $(this).toggleClass('active-link').next().slideToggle();
-    $('.active-link').not(this).removeClass('active-link').next().slideUp();  
-  });
-
-
-
+    //аккордион второй уровень
+    $('.header-mobile__link-levelone').click(function() {
+      $(this).toggleClass('active-link').next().slideToggle();
+      $('.active-link').not(this).removeClass('active-link').next().slideUp();  
+    });
     
     // при скролле исчезает видео и сетка 
     $(window).on('scroll', function() {
       var scrollCoef = 0.003;
-    
+
       $('video, .opacity').css({
         opacity: 1 - $(window).scrollTop() * scrollCoef
       });
@@ -77,8 +67,6 @@ $(document).ready(function(){
       height: $(window).height() + 'px'
     });
 
-
-
     //модалка
     $('.main__btn').on('click', function() {
       $('.overlay, #modal').fadeIn();
@@ -89,31 +77,39 @@ $(document).ready(function(){
       $('.overlay, #modal, #thanks').fadeOut();
       $('form')[0].reset();  //сбросить значения интуп при закрытии окна
       $('body').css('overflow', '');
+      $('input').val("");  
+      $('input').removeClass("success");  
     });
 
-    // Клик по фону, но не по окну.
+    // Клик по фону, но не по окну
     $('.overlay').click(function(e) {
       if ($(e.target).closest('#modal').length == 0) {
         $(this).fadeOut();	
-              $('form')[0].reset();				
+        $('form')[0].reset(); 
+        $('input').val("");  
+        $('input').removeClass("success");  
       }
     });
  
     //Закрытие по клавише esc
     $(document).on('keydown', function(e) {
-      if (e.keyCode == 27)
-      $('.overlay, #modal, #thanks').fadeOut();
+      if (e.keyCode == 27) {
+         $('.overlay, #modal, #thanks').fadeOut();
+         $('form').trigger('reset');
+         $('input').val("");  
+        $('input').removeClass("success");  
+      }
     });
 
-    $('input[name=phone]').mask("+7(999)999-9999"); //маска номера
+    //маска номера
+    $('input[name=phone]').mask("+7(999)999-9999"); 
 
     // добавляем правило для валидации телефона
-   jQuery.validator.addMethod("checkMaskPhone", function(value, element) {
-     return /\+\d{1}\(\d{3}\)\d{3}-\d{4}/g.test(value); 
+    jQuery.validator.addMethod("checkMaskPhone", function(value, element) {
+      return /\+\d{1}\(\d{3}\)\d{3}-\d{4}/g.test(value); 
     });
   
     //валидация формы в модальном окне
-  
     $('.modal__form').validate({
         rules: {
             name: "required",
@@ -146,7 +142,6 @@ $(document).ready(function(){
     });
 
     //при потере фокуса проходит проверка
-    
     $('.modal__input').blur(function(){
         if(!$(this).valid()){
             $(this).focus();
@@ -154,23 +149,24 @@ $(document).ready(function(){
         }
     });
     
-
     //активность кнопки
     function checkParams() {
       var email = $('#mail').val();
       var phone = $('#phone').val();
       var name = $('#name').val();
         
-      if(email.length != 0 && phone.length !=0 && name.length != 0 && $('#check').is(':checked')) {
+      if(email.length != 0 && phone.length != 0 && name.length != 0 && $('#check').is(':checked')) {
           $('.modal__submit').removeAttr('disabled');
           $('.modal__submit').css('opacity', '1');
       } else {
           $('.modal__submit').attr('disabled', 'disabled');
       }
     }
-  //проверка заполненности инпутов
+    
+    //проверка заполненности инпутов
     $('.modal__input').keyup(function() {
-      checkParams() ;
+      $(this).valid();
+      checkParams();
     });
 
     //проверка галки
@@ -178,7 +174,7 @@ $(document).ready(function(){
       checkParams();
     });
       
-
+    //если форма отправилась
     $('form').submit(function(e) {
       $(this).find("input").val("");  
       $(this).find("input").removeClass('success'); 
@@ -187,8 +183,8 @@ $(document).ready(function(){
       $('.modal__submit').css('opacity', '0.2');
       $(this).find("textarea").val("");
       $('#modal').fadeOut();
-      $('#thanks').fadeIn('slow');
-      $('form').trigger('reset'); //очищение формы       
+      $('.overlay, #thanks').fadeIn('slow');
+      $('form').trigger('reset');      
     });
 
   }); 

@@ -10,7 +10,6 @@
     &__wr {
         display: flex;
         justify-content: space-between;
-        
     }
     &__hamburger {
         width: 22px;
@@ -51,12 +50,12 @@
         width: 100%;
         height: 100%;
         padding: 10px;
+        padding-bottom: 50px;
         background-color: #fff;
         z-index: 1;
         overflow-y: scroll;
     }
     &__btns {
-        // margin-top: 10px;
         display: flex;
         justify-content: space-between;
         margin-bottom: 16px;
@@ -80,6 +79,9 @@
         height: 2px;
         background-color: $second-color;
         list-style: none;
+    }
+    &__item {
+        list-style-type: none;
     }
     &__head {
         font-weight: 700;
@@ -106,6 +108,7 @@
         }
         &_nbg {
             background: none;
+            font-weight: 700;
         }
     }
     &__link-levelone,  &__link-leveltwo {
@@ -136,8 +139,7 @@
     }
     &__menu-leveltwo {
         display: none;
-    }
-    
+    }  
 }
 .active-link {
     color: $second-color;
