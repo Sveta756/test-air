@@ -68,8 +68,15 @@
 }
 
 .next-block {
-    min-height: 5px;
+    height: 45px;
     background-color: #fff;
     max-width: 1300px;
     margin: 0 auto;
+}
+
+.next-block2 {
+    height: 45px;
+    background-color: transparent;
+    max-width: 1300px;
+    margin: 0 auto; 
 }

@@ -10,6 +10,11 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
+a, label{
+	-webkit-tap-highlight-color: transparent;
+}
+
+
 
 @import './base/variables';
 @import './base/fonts';

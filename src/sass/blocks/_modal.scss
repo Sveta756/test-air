@@ -21,7 +21,6 @@
     border-radius: 15px;
     padding: 20px 0 30px 30px;
     color: $main-color;
-    font-family: 'MuseoCyrl', sans-serif;
     font-weight: 500;
     &_mini {
         display: none;
@@ -98,7 +97,6 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        font-family: 'MuseoCyrl', sans-serif;
         padding-right: 10px;
     }
     &__input, &__text {

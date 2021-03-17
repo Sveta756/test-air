@@ -59,7 +59,14 @@ $(document).ready(function(){
       $('.products, .next-block').css({
         height:  $(window).scrollTop() * 2
       });
-      $('.header').css('background', 'rgb(255, 255, 255)')
+      $('.header').css('background', 'rgb(255, 255, 255)');
+
+
+      if ($(window).width() <= '540'){ 
+        $('.products').css({
+          height:  $(window).scrollTop() * 10
+        });
+      }
     });
 
     //растягивание блока 

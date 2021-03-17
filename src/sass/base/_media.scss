@@ -1,4 +1,4 @@
-@media (max-width: 540px) {
+@media (max-width: 599px) {
     .header {
         display: none;
     }
@@ -67,5 +67,8 @@
             width: 100%;
         }
         
+    }
+    .next-block {
+        display: none;
     }
 }

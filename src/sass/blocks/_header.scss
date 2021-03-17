@@ -131,7 +131,7 @@
     }
     &__menu-icon {
         cursor: pointer;
-        fill: #000000;
+        fill: $main-color;
         width: 30px;
         height: 26px;
         &:hover {
@@ -207,6 +207,6 @@
     &__accordion-text {
         font-size: 14px;
         line-height: 16px;
-        color: #000000;
+        color: $main-color;
     }
 }

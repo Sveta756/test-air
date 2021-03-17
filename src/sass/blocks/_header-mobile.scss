@@ -57,7 +57,7 @@
     }
     &__btns {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         margin-bottom: 16px;
     }
     &__menu-icon {
@@ -65,15 +65,16 @@
         height: 22px;
     }
     &__icons {
-        width: 99px;
+        min-width: 99px;
         display: flex;
         justify-content: center;
         text-decoration: none;
         padding: 10px 15px;
-        border-right: 1px solid #EAEAEA;
-        &:last-child {
-            border-right: none;
-        }
+    }
+    &__vertical-line {
+        width: 1px;
+        height: 34px;
+        background-color: #EAEAEA;
     }
     &__line {
         height: 2px;
@@ -90,7 +91,7 @@
         line-height: 19px;
         background: url('../icon/right.svg') no-repeat center right 25px;
         &_active {
-            background: url('../icon/arrow-down.svg') no-repeat center right 25px;  
+            background: url('../icon/arrow-down-pink.svg') no-repeat center right 25px;  
             color: $second-color;
         }
     }
@@ -143,6 +144,6 @@
 }
 .active-link {
     color: $second-color;
-    background: url('../icon/arrow-down.svg') no-repeat center right 25px;  
+    background: url('../icon/arrow-down-pink.svg') no-repeat center right 25px;  
 }
 
