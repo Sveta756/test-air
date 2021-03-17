@@ -79,26 +79,26 @@ $(document).ready(function(){
       $('.overlay, #modal').fadeIn();
       $('body').css('overflow', 'hidden');
     });
-  
-    $('.modal__close').on('click', function() {
-      $('.overlay, #modal, #thanks').fadeOut();
-      $('form')[0].reset();  //сбросить значения интуп при закрытии окна
+
+    function clearForm() {
+      $('form')[0].reset(); 
       $('body').css('overflow', '');
       $('input').val('');  
       $('input').removeClass('success');  
       $('input').removeClass('error');
       $('input').next('label').remove();
+    }
+  
+    $('.modal__close').on('click', function() {
+      $('.overlay, #modal, #thanks').fadeOut();
+      clearForm();
     });
 
     // Клик по фону, но не по окну
     $('.overlay').click(function(e) {
       if ($(e.target).closest('#modal').length == 0) {
         $(this).fadeOut();	
-        $('form')[0].reset(); 
-        $('input').val('');  
-        $('input').removeClass('success');  
-        $('input').removeClass('error');
-        $('input').next('label').remove();
+        clearForm();
       }
     });
  
@@ -106,11 +106,7 @@ $(document).ready(function(){
     $(document).on('keydown', function(e) {
       if (e.keyCode == 27) {
          $('.overlay, #modal, #thanks').fadeOut();
-         $('form')[0].reset(); 
-         $('input').val('');  
-        $('input').removeClass('success');  
-        $('input').removeClass('error'); 
-        $('input').next('label').remove(); 
+         clearForm();
       }
     });
 
