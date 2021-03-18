@@ -21,6 +21,9 @@ $(document).ready(function(){
       if ($(this).hasClass('header-mobile__hamburger_active')) {
         $('body').css('overflow', 'hidden');
         $('.header-mobile__body').fadeIn();
+        $('.header-mobile__wr').css({
+          'box-shadow': ''
+        });
       } else {
         $('.header-mobile__body').fadeOut();
         $('.header-mobile').css('background', '');
@@ -63,19 +66,27 @@ $(document).ready(function(){
         height:  $(window).scrollTop() * 2
       });
       $('.header').css('background', 'rgb(255, 255, 255)');
+      if ($(window).scrollTop() == 0) {
+        $('.header').css('background', 'rgba(255, 255, 255, 0.9)');
+      }
 
 
       if ($(window).width() <= '599'){ 
         $('.products').css({
           height:  $(window).scrollTop() * 10
         });
+        $('.header-mobile').css({
+          'background': '#fff',
+          'box-shadow': '0px 5px 5px rgba(0, 0, 0, 0.132586)'
+        });
+        if ($(window).scrollTop() == 0) {
+          $('.header-mobile').css({
+            'background': '',
+            'box-shadow': ''
+          });
+        }
       }
     });
-
-    //растягивание блока 
-    // $('.wrapper').css({
-    //   height: $(window).height() + 'px'
-    // });
 
     //модалка
     $('.main__btn').on('click', function() {
