@@ -14,7 +14,10 @@ a, label{
 	-webkit-tap-highlight-color: transparent;
 }
 
-
+.err {
+        text-align: right;
+        background: none;
+}
 
 @import './base/variables';
 @import './base/fonts';

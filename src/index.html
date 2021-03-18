@@ -23,6 +23,7 @@
                 <nav class="header__nav">
                     <ul class="header__menu">
                         <li class="header__item" data-id="1">
+                            <span class="header__item_act"></span>
                             <a href="#" class="header__link">
                                 <svg class="header__icon">
                                     <use xlink:href="icon/icons.svg#varnish"></use>
@@ -70,6 +71,7 @@
                             </div>
                         </li>
                         <li class="header__item" data-id="2">
+                            <span class="header__item_act"></span>
                             <a href="#" class="header__link">
                             <svg class="header__icon">
                                 <use xlink:href="icon/icons.svg#hairdryer"></use>
@@ -116,6 +118,7 @@
                             </div>
                         </li>
                         <li class="header__item" data-id="3">
+                            <span class="header__item_act"></span>
                             <a href="#" class="header__link header__link_newafter">
                                 <svg class="header__icon header__icon_mr4">
                                     <use xlink:href="icon/icons.svg#ring"></use>
@@ -205,6 +208,7 @@
                         <use xlink:href="icon/icons.svg#basket"></use>
                     </svg>
                 </a>
+            </div>
                 <div class="header-mobile__body">
                     <div class="header-mobile__btns">
                         <a href="#" class="header-mobile__icons">
@@ -378,8 +382,7 @@
                             </li>
                         </ul>
                     </nav>
-                </div>
-            </div>
+                </div>           
         </header>
     
         <section class="main">
@@ -430,6 +433,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- <div class="next-block"></div>
+    <div class="next-block2"></div> -->
     </div>
     <div class="next-block"></div>
     <div class="next-block2"></div>
@@ -441,11 +447,15 @@
                 <div class="modal__title">Напиши нам</div>  
                 <form class="modal__form" action="#" id="form">
                     <p class="modal__subtitle">Имя:</p>
-                    <input class="modal__input" name="name" type="text" placeholder="Ваше имя" id="name" autocomplete="off">
+                    <div class="err" id="errNm1"></div>
+                    <input class="modal__input" name="name" type="text" placeholder="Ваше имя" id="name" autocomplete="off"
+                    data-error="#errNm1">
                     <p class="modal__subtitle">Телефон:</p>
-                    <input class="modal__input" name="phone" placeholder="Ваш телефон" id="phone">
+                    <div class="err" id="errNm2"></div>
+                    <input class="modal__input modal__input_phone" name="phone" placeholder="Ваш телефон" id="phone" data-error="#errNm2">
                     <p class="modal__subtitle">Эл.почта:</p>
-                    <input class="modal__input" name="email" type="email" placeholder="Ваша почта" id="mail" autocomplete="off">
+                    <div class="err" id="errNm3"></div>
+                    <input class="modal__input" name="email" type="email" placeholder="Ваша почта" id="mail" autocomplete="off" data-error="#errNm3">
                     <p class="modal__subtitle">Сообщение:</p>
                     <textarea name="text" class="modal__text" placeholder="Оставьте сообщение..."></textarea>
                     <label class="modal__checkbox">
@@ -458,7 +468,7 @@
        </div>
 
        <div class="modal modal_mini" id="thanks">
-            <div class="modal__close"></div> 
+            <div class="modal__close modal__close_two"></div> 
             <div class="modal__title modal__title_mini">Спасибо&#10084;</div>  
         </div>
     </div>
