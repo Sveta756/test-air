@@ -71,7 +71,7 @@ $(document).ready(function(){
       }
 
 
-      if ($(window).width() <= '599'){ 
+      if ($(window).width() <= '990'){ 
         $('.products').css({
           height:  $(window).scrollTop() * 10
         });
